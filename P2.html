@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的個人網頁</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    footer {
+      background-color: #ddd;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: steelblue;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .my-button {
+      display: inline-block;
+      background-color: #4a90e2;
+      color: white;
+      padding: 6px 12px; /*按鈕內部的空間*/
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      position: absolute; /* 📌 固定在卡片底部 */
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .my-button:hover {
+      background-color: #357abd;
+    }
+
+    /* 🖼️ 包住圖片＋按鈕的外框：可自由移動 */
+    .floating-image-box {
+      position: absolute;
+      top: 240px; /* ← 自由修改位置 */
+      left: 65%; /* 更改卡片顯示位置 */
+    }
+
+    /*方便複製用*/
+
+/* 🪄 背景卡片樣式 */
+    .card {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("card.jpg"); /* 指定背景圖路徑 */
+      /* linear-gradient(...) 是透明黑色遮罩，讓文字更清楚 rgba(0, 0, 0, 0.4) 表示黑色、透明度 40% 你也可以改成 rgba(255, 255, 255, 0.4) 如果想讓整體亮一點*/
+      background-size: contain; /* cover 完整覆蓋區塊（不變形但可能被裁切） contain 顯示整張圖不裁切，但可能留空白 auto 用固定尺寸顯示，不放大不縮小 */
+      background-repeat: no-repeat;
+      background-position: center; /*圖片置中對齊*/
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+	   justify-content: space-between; /* 讓頂部（圖片+文字）和底部（按鈕）分散排列 */
+      position: relative; /* 📌 讓按鈕可以絕對定位在這張卡片內 */
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+      padding: 20px 10px 60px 10px; /* 📏 下方預留空間給按鈕 */
+      text-align: center;
+      height: 300px;
+      width: 200px;
+      color: white; /* 如果背景圖太深，改文字顏色 */
+      gap: 5px;
+    }
+    .card img {
+      width: 100%;
+      max-width: 180px; /* 控制最大寬度，避免超出卡片 */
+      border-radius: 12px;
+      margin: 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 可選 */
+      display: block;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+/* 🪄 背景卡片樣式 */
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>我的個人網站</h1>
+    <p>這裡是我的個人網頁</p>
+  </header>
+
+  <main>
+    <h2>關於我</h2>
+    <p>你好！我是 XXX，一位熱愛網頁設計與開發的創作者。</p>
+
+    <h2>我的作品</h2>
+    <p>下面這張圖和按鈕可以自由移動位置，並且有卡片背景。</p>
+  </main>
+
+  <!-- 🎯 可移動的圖片＋按鈕區塊，有背景卡片 -->
+  <div class="floating-image-box"> <!-- 更改卡片顯示位置 -->
+    <div class="card">
+      <img src="MVP.png" alt="非常抱歉 圖片無法顯示">
+      <p>小明劍魔<br>喜歡吃陽光青提的占卜師</p>
+      <a href="https://example.com" class="my-button">這個月得了個MVP</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 我的名字 | <a href="mailto:you@example.com">聯絡我</a>
+  </footer>
+
+</body>
+</html>
